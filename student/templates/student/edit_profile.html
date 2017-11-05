@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load django_markdown %}
+
+{% block body %}
+    <title>Profile</title>
+
+    <div class="container">
+    <form  method="post"  enctype="multipart/form-data" action="">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">submit</button>
+    </form>
+    <br>
+    </div>
+
+  {% endblock body %}

@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+  <div class="col-md-4">
+    <h2>classmates</h2>
+    {% for stud in class_mates %}
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <a href="{{ user.userprofile.image.url }}">
+      <img src="{{ user.userprofile.image.url }}" align = "left" class="img-circle" alt="Cinque Terre" width="50" height="50">
+      </a><a href="{% url 'view_profile_with_pk' pk=user.pk %}"><h3>{{ stud.studentId }}</h3></a>
+      </div>
+    </div>
+
+    {% endfor %}
+
+  </div>
+</div>
+{% endblock %}

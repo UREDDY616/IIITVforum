@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<title> home </title>
+{% endblock %}
+{% block body %}
+<div class="container">
+
+  {% for course in courses %}
+  <a href="{% url 'sem_course' course_No=course.courseNo.pk  %}"><h2>{{ course.courseNo.courseName }}</h2></a>
+  {% endfor %}
+
+</div>
+<div class="container">
+  <a href="/student/forum"><h2>Forum</h2>
+</div>
+{% endblock %}
